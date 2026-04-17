@@ -2,8 +2,10 @@ import express from 'express';
 import connectDB from './config/database.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import authRoutes from './routes/auth.js'
-
+import authRoutes from './routes/auth.js';
+import skillRoutes from './routes/skills.js';
+import bookingRoutes from './routes/booking.js'
+import reviewRoutes from './routes/review.js'
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -14,6 +16,9 @@ app.get('/api/health', (req, res) => {
 })
 
 app.use('/api/auth', authRoutes);
+app.use('/skills',skillRoutes);
+app.use('/booking',bookingRoutes);
+app.use('/review',reviewRoutes);
 const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {

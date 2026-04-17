@@ -23,7 +23,7 @@ const reviewSchema = mongoose.Schema({
     },
     comment : {
         type : String,
-        default : " "
+        default : ""
     }
 },
 {
