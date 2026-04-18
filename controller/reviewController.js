@@ -3,7 +3,7 @@ import Booking from "../models/Booking.js";
 
 export const createReview = async(req,res) => {
     try {
-        const booking = await Booking.findById(req.body.BookingId);
+        const booking = await Booking.findById(req.body.bookingId);
         if(!booking) return res.status(404).json({message:"Booking not found"});
         if(booking.status=="completed")
         {

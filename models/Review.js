@@ -11,7 +11,7 @@ const reviewSchema = mongoose.Schema({
         ref : 'skilledProfile',
         required : true
     },
-    BookingId : {
+    bookingId : {
         type : mongoose.Schema.Types.ObjectId,
         ref : 'Booking',
         required : true

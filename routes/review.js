@@ -1,5 +1,6 @@
 import express from 'express';
-import { getMyReviews,getReviews,createReview } from '../controller/reviewController';
+import { getMyReviews,getReviews,createReview } from '../controller/reviewController.js';
+import auth from '../middleware/auth.js'
 
 const router = express.Router();
 router.post('/',auth,createReview);

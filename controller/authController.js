@@ -10,13 +10,9 @@ export const register = async(req,res) => {
         return res.status(400).json({message:"Already registered"});
     }
     const user = await User.create({
-  name, email, password, role, city, area, phone, aadharImage
-}).catch(err => {
-  console.log('Create error:', err.message)
-})
-    
-    const token = generateToken(user._id,user.role);
-    res.status(201).json({user,token});
+     name, email, password, role, city, area, phone, aadharImage
+    })
+    res.status(201).json({user});
     } catch (error) {
         res.status(500).json({message:error.message})
     }

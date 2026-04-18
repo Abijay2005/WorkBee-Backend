@@ -33,7 +33,7 @@ export const viewByCategory = async(req,res) => {
 
 export const newSkill = async(req,res) => {
     try {
-        const skill = await skilledProfile.create(req.body);
+        const skill = await skilledProfile.create({...req.body,userId:req.user._id});
         res.status(201).json(skill);
     } catch (error) {
         return res.status(500).json({message:error.message})
